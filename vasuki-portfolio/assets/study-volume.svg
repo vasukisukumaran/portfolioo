@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+  <linearGradient id="bg" x2="1" y2="1" gradientUnits="objectBoundingBox">
+    <stop stop-color="#51484d"/><stop offset=".44" stop-color="#302d33"/><stop offset="1" stop-color="#242328"/>
+  </linearGradient>
+  <radialGradient id="mist" cx=".74" cy=".24" r=".85">
+    <stop stop-color="#a87678"/><stop offset=".52" stop-color="#51454e"/><stop offset="1" stop-color="#26262c"/>
+  </radialGradient>
+  <linearGradient id="salmon" x1="0" y1="1" x2="1" y2="0">
+    <stop stop-color="#c06864"/><stop offset=".53" stop-color="#f58f7c"/><stop offset="1" stop-color="#ffd1c6"/>
+  </linearGradient>
+  <linearGradient id="shadow" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#514247"/><stop offset="1" stop-color="#241f26"/>
+  </linearGradient>
+  <linearGradient id="pink" x1="0" y1=".1" x2=".9" y2=".85">
+    <stop stop-color="#f7c9c8"/><stop offset=".5" stop-color="#e9a3a1"/><stop offset="1" stop-color="#8e666c"/>
+  </linearGradient>
+  <linearGradient id="glassA" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#ffb4aa" stop-opacity=".74"/><stop offset=".5" stop-color="#ef8f8a" stop-opacity=".23"/><stop offset="1" stop-color="#74363f" stop-opacity=".54"/>
+  </linearGradient>
+  <linearGradient id="glassB" x1="0" y1="1" x2="1" y2="0">
+    <stop stop-color="#5e353e" stop-opacity=".72"/><stop offset=".62" stop-color="#e7827d" stop-opacity=".39"/><stop offset="1" stop-color="#ffd5c9" stop-opacity=".75"/>
+  </linearGradient>
+  <linearGradient id="glassTop" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#ffb1a7" stop-opacity=".9"/><stop offset=".5" stop-color="#f39a92" stop-opacity=".37"/><stop offset="1" stop-color="#84545e" stop-opacity=".66"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="800" height="500" fill="url(#bg)"/><ellipse cx="430" cy="449" rx="245" ry="25" fill="#211e25" opacity=".6"/><polyline points="278.0,403.6 397.0,350.0 516.0,403.6" fill="none" stroke="#ffbcb1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity="0.38"/><polyline points="397.0,253.0 397.0,350.0" fill="none" stroke="#ffbcb1" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="0.46"/><polygon points="397.0,253.0 516.0,306.6 397.0,360.1 278.0,306.6" fill="url(#glassTop)" stroke="#ffbcb1" stroke-width="1.25" opacity="0.99"/><polygon points="278.0,306.6 397.0,360.1 397.0,457.1 278.0,403.6" fill="url(#glassA)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.96"/><polygon points="397.0,360.1 516.0,306.6 516.0,403.6 397.0,457.1" fill="url(#glassB)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.95"/><polyline points="187.0,427.4 279.0,386.0 371.0,427.4" fill="none" stroke="#ffbcb1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity="0.38"/><polyline points="279.0,308.0 279.0,386.0" fill="none" stroke="#ffbcb1" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="0.46"/><polygon points="279.0,308.0 371.0,349.4 279.0,390.8 187.0,349.4" fill="url(#glassTop)" stroke="#ffbcb1" stroke-width="1.25" opacity="0.99"/><polygon points="187.0,349.4 279.0,390.8 279.0,468.8 187.0,427.4" fill="url(#glassA)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.96"/><polygon points="279.0,390.8 371.0,349.4 371.0,427.4 279.0,468.8" fill="url(#glassB)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.95"/><polyline points="417.0,410.9 499.0,374.0 581.0,410.9" fill="none" stroke="#ffbcb1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity="0.38"/><polyline points="499.0,303.0 499.0,374.0" fill="none" stroke="#ffbcb1" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="0.46"/><polygon points="499.0,303.0 581.0,339.9 499.0,376.8 417.0,339.9" fill="url(#glassTop)" stroke="#ffbcb1" stroke-width="1.25" opacity="0.99"/><polygon points="417.0,339.9 499.0,376.8 499.0,447.8 417.0,410.9" fill="url(#glassA)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.96"/><polygon points="499.0,376.8 581.0,339.9 581.0,410.9 499.0,447.8" fill="url(#glassB)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.95"/><polyline points="282.0,312.9 393.0,263.0 504.0,312.9" fill="none" stroke="#ffbcb1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity="0.38"/><polyline points="393.0,160.0 393.0,263.0" fill="none" stroke="#ffbcb1" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="0.46"/><polygon points="393.0,160.0 504.0,209.9 393.0,259.9 282.0,209.9" fill="url(#salmon)" stroke="#ffbcb1" stroke-width="1.25" opacity="0.99"/><polygon points="282.0,209.9 393.0,259.9 393.0,362.9 282.0,312.9" fill="url(#pink)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.96"/><polygon points="393.0,259.9 504.0,209.9 504.0,312.9 393.0,362.9" fill="url(#salmon)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.95"/><polyline points="280.0,215.8 393.0,165.0 506.0,215.8" fill="none" stroke="#ffbcb1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity="0.38"/><polyline points="393.0,72.0 393.0,165.0" fill="none" stroke="#ffbcb1" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round" opacity="0.46"/><polygon points="393.0,72.0 506.0,122.8 393.0,173.7 280.0,122.8" fill="url(#glassTop)" stroke="#ffbcb1" stroke-width="1.25" opacity="0.99"/><polygon points="280.0,122.8 393.0,173.7 393.0,266.7 280.0,215.8" fill="url(#glassA)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.96"/><polygon points="393.0,173.7 506.0,122.8 506.0,215.8 393.0,266.7" fill="url(#glassB)" stroke="#ffbcb1" stroke-width="1.15" opacity="0.95"/><rect width="800" height="500" filter="url(#grain)" opacity=".052"/></svg>
