@@ -5,7 +5,7 @@ from datetime import date
 from html import escape
 from pathlib import Path
 
-from content import EDUCATION, EXPERTISE, PROJECTS, STUDIES, TRAINING
+from content import EXPERTISE, PROJECTS
 from graphics import icon, photo_overlay
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +15,6 @@ ORIGIN = os.environ.get("PORTFOLIO_ORIGIN", "").rstrip("/")
 YEAR = date.today().year
 NAV = ["Home", "About", "Projects", "Expertise", "Experience", "Contact"]
 EMAIL = "vasukisukumaran@gmail.com"
-PHONE = "+91 9944741852"
 GITHUB = "https://github.com/vasukisukumaran"
 LINKEDIN = "https://linkedin.com/in/vasuki-a-s-3389b7339"
 
@@ -35,16 +34,11 @@ def head(title, description, prefix="", route="", home=False):
   <meta property="og:title" content="{escape(title, quote=True)}">
   <meta property="og:description" content="{escape(description, quote=True)}">
   {canonical}
-  <link rel="icon" href="{prefix}assets/monogram.svg" type="image/svg+xml">
   <link rel="preload" href="{prefix}assets/inter.woff2" as="font" type="font/woff2" crossorigin>
   {hero_preload}
   <link rel="stylesheet" href="{prefix}site.css">
   <script src="{prefix}site.js" defer></script>
 </head>'''
-
-
-def brand(href):
-    return f'<a class="wordmark" href="{href}" aria-label="Vasuki A.S. home">V.A.S<span>.</span></a>'
 
 
 def header(prefix="", detail=False):
@@ -59,7 +53,6 @@ def header(prefix="", detail=False):
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    {brand(base + "#home")}
     <nav class="main-nav" id="main-nav" aria-label="Main navigation">{"".join(items)}</nav>
     <a class="availability" href="{base}#contact" aria-label="Available for opportunities. Contact Vasuki"><span aria-hidden="true"></span>Available</a>
     <button type="button" class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation">
@@ -77,7 +70,7 @@ def footer(prefix=""):
     home = f"{prefix}index.html#home" if prefix else "#home"
     return f'''
 <footer class="site-footer dark">
-  <div class="wrap footer-inner">{brand(home)}
+  <div class="wrap footer-inner">
     <p>Designed with intention. Built with curiosity.</p>
     <small>© {YEAR} Vasuki A.S.</small>
     <a href="{home}" class="back-top" aria-label="Back to home">{icon("up")}</a>
@@ -94,9 +87,9 @@ def hero():
     </div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow hero-byline"><b>Vasuki A.S.</b><span class="slash">/</span><span>AI &amp; Software Engineering</span></p>
+        <p class="eyebrow hero-byline"><b>Vasuki A.S.</b><span class="slash">/</span><span>Computer Science &amp; Engineering</span></p>
         <h1 id="hero-title" class="display hero-title"><span>Intelligence</span><span>meets</span><span>engineering<span class="accent">.</span></span></h1>
-        <p class="hero-deck">Exploring the intersection of artificial intelligence, software engineering, and meaningful digital experiences.</p>
+        <p class="hero-deck">Exploring computer science, software engineering, and how they shape meaningful digital experiences.</p>
         <div class="actions"><a class="button primary" href="#projects">Explore projects {icon("arrow")}</a><a class="button ghost" href="#about">About me</a></div>
       </div>
     </div>
@@ -117,7 +110,7 @@ def about():
         {kicker("About")}
         <h2 class="display section-title" id="about-title" data-reveal>Curious by<br>nature. Built<br>to explore.</h2>
         <div class="bio">
-          <p>I’m Vasuki, a third-year engineering student at PSNA College of Engineering and Technology, specializing in artificial intelligence and machine learning.</p>
+          <p>I’m Vasuki, a third-year engineering student at PSNA College of Engineering and Technology.</p>
           <p>I like taking an everyday problem and building something people can use. That interest draws me to full-stack development, intelligent systems, and the details that make software feel intuitive.</p>
         </div>
       </div>
@@ -129,7 +122,7 @@ def about():
     </div>
     <dl class="bio-facts">
       <div><dt>Location</dt><dd>Madurai, India</dd></div>
-      <div><dt>Education</dt><dd>B.E. Artificial Intelligence and Machine Learning</dd></div>
+      <div><dt>Education</dt><dd>B.E. Computer Science and Engineering</dd></div>
       <div><dt>Institution</dt><dd>PSNA College of Engineering and Technology</dd></div>
       <div><dt>Current status</dt><dd>Third year</dd></div>
     </dl>
@@ -208,8 +201,6 @@ def expertise():
 
 
 def background():
-    edu = "".join(f'<li><span class="timeline-year">{escape(year)}</span><div><h4>{escape(title)}</h4><p>{escape(school)}</p><span class="grade">{escape(grade)}</span></div></li>' for year, title, school, grade in EDUCATION)
-    train = "".join(f'<li><span class="timeline-year">{escape(year)}</span><ul class="courses">' + "".join(f'<li>{escape(course)}</li>' for course in courses) + '</ul></li>' for year, courses in TRAINING)
     return f'''
 <section class="section experience paper" id="experience" data-nav="experience" aria-labelledby="experience-title">
   <div class="wrap">
@@ -221,47 +212,8 @@ def background():
         <p>Completed an internship focused on chatbot development using Python.</p>
       </div></div>
     </div>
-    <div class="academic-grid">
-      <section aria-labelledby="education-title">
-        {kicker("Education")}<h3 class="display subheading" id="education-title">The foundation.</h3>
-        <ol class="timeline">{edu}</ol>
-        <p class="languages"><b>Languages</b> Tamil and English, spoken and written.</p>
-      </section>
-      <section aria-labelledby="training-title">
-        {kicker("Certifications & training")}<h3 class="display subheading" id="training-title">Continuously expanding<br>the horizon.</h3>
-        <ol class="timeline training-list">{train}</ol>
-      </section>
-    </div>
   </div>
 </section>'''
-
-
-def exploration():
-    figures = []
-    for n, (slug, name, caption) in enumerate(STUDIES):
-        figures.append(f'''
-      <figure class="study">
-        <a class="study-open" href="assets/study-{slug}.svg" data-study="{n}" aria-label="Enlarge the {escape(name)} study" aria-haspopup="dialog">
-          <img src="assets/study-{slug}.svg" alt="{escape(caption, quote=True)}" width="800" height="500" loading="lazy" decoding="async">
-          <span class="study-expand">{icon("expand")}</span>
-        </a>
-        <figcaption>{escape(name)}</figcaption><p class="sr-only study-description">{escape(caption)}</p>
-      </figure>''')
-    return f'''
-<section class="section exploration dark" aria-labelledby="explore-title" data-nav="experience">
-  <div class="wrap">{kicker("Visual explorations")}
-    <div class="section-heading"><h2 class="display section-title" id="explore-title" data-reveal>Beyond the<br>defined.</h2>
-    <p>Three visual studies in volume, repetition, and light. A space to play with the forms that run through this portfolio.</p></div>
-    <div class="studies">{"".join(figures)}</div>
-  </div>
-</section>
-<dialog class="study-dialog" id="study-dialog" aria-labelledby="study-dialog-title">
-  <div class="dialog-bar"><p class="eyebrow">Visual exploration</p><button class="dialog-close" type="button" aria-label="Close enlarged study">{icon("close")}</button></div>
-  <img class="dialog-image" src="assets/study-volume.svg" alt="" width="800" height="500" loading="lazy">
-  <div class="dialog-copy"><div><h2 id="study-dialog-title"></h2><p class="dialog-description"></p></div>
-    <div class="dialog-controls"><button type="button" class="prev-study" aria-label="Previous study">{icon("back")}</button><button type="button" class="next-study" aria-label="Next study">{icon("arrow")}</button></div>
-  </div>
-</dialog>'''
 
 
 def philosophy():
@@ -282,7 +234,7 @@ def contact():
         ext = icon("north-east", "row-arrow") if external else ""
         return f'<li>{tag}{icon(symbol)}<span>{escape(label)}</span>{ext}{end}</li>'
     contacts = [
-        line("mail", EMAIL, "mailto:" + EMAIL), line("phone", PHONE, "tel:+919944741852"),
+        line("mail", EMAIL, "mailto:" + EMAIL),
         line("pin", "Madurai, India"), line("linkedin", "LinkedIn", LINKEDIN, True),
         line("github", "GitHub", GITHUB, True),
     ]
@@ -303,9 +255,9 @@ def contact():
 
 def home_page():
     return (
-        head("Vasuki A.S. — AI & Software Engineering", "Explore Vasuki A.S.’s portfolio of AI, machine learning and full-stack development projects, technical skills, and education in Madurai, India.", home=True)
+        head("Vasuki A.S. — Computer Science & Engineering", "Explore Vasuki A.S.’s portfolio of AI, machine learning and full-stack development projects and technical skills.", home=True)
         + '<body>' + header() + '<main id="main">' + hero() + about() + projects() + expertise()
-        + background() + exploration() + philosophy() + contact() + '</main>' + footer() + '</body></html>'
+        + background() + philosophy() + contact() + '</main>' + footer() + '</body></html>'
     )
 
 

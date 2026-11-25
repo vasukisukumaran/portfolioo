@@ -103,21 +103,3 @@ EXPERTISE = [
     ("tools", "Tools & platforms", "VS Code, IntelliJ IDEA, Git, GitHub, XAMPP, Figma, Canva"),
     ("people", "Soft skills", "Problem-solving, communication, teamwork"),
 ]
-
-EDUCATION = [
-    ("2024–2028", "B.E. — Artificial Intelligence and Machine Learning", "PSNA College of Engineering and Technology", "CGPA 8.29 / 10"),
-    ("2024", "HSC — 12th Standard", "Lakshmi Matriculation Higher Secondary School", "73.5%"),
-    ("2022", "SSLC — 10th Standard", "Lakshmi Matriculation Higher Secondary School", "84.6%"),
-]
-
-TRAINING = [
-    ("2026", ["Master in Full Stack in Java", "Entrepreneurship and Small Business", "Chatbot in Python", "Use AI for Everyday Tasks"]),
-    ("2025", ["Generative AI", "AI/ML – Dreams Unlock"]),
-    ("Additional training", ["AI Data Strategy with MongoDB", "RAG with MongoDB"]),
-]
-
-STUDIES = [
-    ("volume", "Stacked volume", "Translucent cubes study how one surface changes the colour of the next."),
-    ("wave", "Wave field", "A grid of fine lines bends across a continuous surface."),
-    ("steps", "Stepped light", "A staircase turns a single light source into bands of coral, blush and graphite."),
-]
